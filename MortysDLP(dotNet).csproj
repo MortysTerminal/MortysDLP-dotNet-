@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>MortysDLP_dotNet_</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Logos\Icons\mw_globe_32px.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Logos\Icons\mw_globe_32px.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Ressources\yt-dlp\" />
+  </ItemGroup>
+
+</Project>
