@@ -3,8 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:local="clr-namespace:MortysDLP_dotNet_"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="MortysDLP" Height="450" Width="800">
     
     <Grid>
@@ -14,13 +16,80 @@
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0">
-            <Menu>
-                <MenuItem Header="_Einstellungen">
-                    <MenuItem Command="ApplicationCommands.Copy"/>
-                    <MenuItem Command="ApplicationCommands.Cut"/>
-                    <MenuItem Command="ApplicationCommands.Paste"/>
-                </MenuItem>
-            </Menu>
+            <StackPanel Orientation="Horizontal">
+                <ui:Button Name="btn_topBar_Infos" Margin="5">
+                    Info
+                </ui:Button>
+                <ui:Button Name="btn_topBar_Einstellungen_Reset" Click="TopBar_EinstellungenReset" FontStyle="Italic" Margin="5">
+                    Einstellungen zurücksetzen
+                </ui:Button>
+            </StackPanel>
+            
         </DockPanel>
+        <DockPanel Grid.Row="1" Background="#F1F1F1">
+            <Grid Margin="7">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <DockPanel Grid.Row="0" Margin="7">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                            <ui:TextBlock VerticalAlignment="Center">Download-Pfad:</ui:TextBlock>
+                            <ui:TextBlock VerticalAlignment="Center" FontStyle="Italic" FontSize="10" Foreground="Silver">(Standardmäßig 'Downloads' des Users):</ui:TextBlock>
+                        </StackPanel>
+                        <ui:TextBox Name="tb_downloadpath" Width="400px" PlaceholderText="Hier Downloadpfad eingeben" Margin="7 0 0 0"/>
+                        <ui:Button Name="btn_downloadpath_durchsuchen" Click="DownloadPfadDurchsuchen" Margin="7 0 0 0">Durchsuchen</ui:Button>
+                    </StackPanel>
+                </DockPanel>
+
+                <DockPanel Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="7">
+                        <ui:TextBlock VerticalAlignment="Center">Video-URL eingeben:</ui:TextBlock>
+                        <ui:TextBox Width="500px" Margin="7" VerticalAlignment="Center" PlaceholderText="https://youtube.com/id=128BF" ></ui:TextBox>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel Grid.Row="2">
+                    <StackPanel Orientation="Horizontal" Margin="7">
+                        <CheckBox Name="cb_Zeitspanne" Checked="cbZeitspanneCheck" Unchecked="cbZeitspanneCheck" Margin="7"></CheckBox>
+                        <ui:TextBlock Name="txt_zeitspanne_von" VerticalAlignment="Center" Margin="7">Zeitspanne von</ui:TextBlock>
+                        <ui:TextBox Name="tb_zeitspanne_von" VerticalAlignment="Center" Width="100"></ui:TextBox>
+                        <ui:TextBlock Name="txt_zeitspanne_bindestrich" VerticalAlignment="Center" Margin="10">-</ui:TextBlock>
+                        <ui:TextBox Name="tb_zeitspanne_bis" VerticalAlignment="Center" Width="100"></ui:TextBox>
+                        <ui:TextBlock Name="txt_zeitspanne_info" VerticalAlignment="Center" Margin="10">mm:ss angeben!</ui:TextBlock>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel Grid.Row="3">
+                    <StackPanel Orientation="Horizontal" Margin="7">
+                        <CheckBox Name="cb_ErsteSekunden" Checked="cbErsteSekundenCheck" Unchecked="cbErsteSekundenCheck" Margin="7"></CheckBox>
+                        <ui:TextBlock Name="txt_ErsteSekunden_info1" VerticalAlignment="Center" Margin="7">Von Start bis Sekunde:</ui:TextBlock>
+                        <ui:TextBox Name="tb_ErsteSekunden_Sekunden" VerticalAlignment="Center" Width="100"></ui:TextBox>
+                        <ui:TextBlock Name="txt_ErsteSekunden_info2" VerticalAlignment="Center" Margin="7">herunterladen</ui:TextBlock>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel Grid.Row="4">
+                    <StackPanel Orientation="Horizontal" Margin="7">
+                        <CheckBox Name="cb_Videoformat" IsChecked="True" Margin="7"></CheckBox>
+                        <ui:TextBlock Name="txt_Videoformat_info" VerticalAlignment="Center" Margin="7">Videoformat für Schnittprogramme anpassen</ui:TextBlock>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel Grid.Row="5" Background="AliceBlue">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:Button Margin="7">Download starten</ui:Button>
+                        <ui:Button Name="btn_einstellungen_speichern" Click="EinstellungenSpeichern" Margin="7">Einstellungen speichern</ui:Button>
+                        <StackPanel Orientation="Vertical" Margin="7" HorizontalAlignment="Center">
+                            <TextBlock>Lädt</TextBlock>
+                            <ProgressBar Width="200" Height="22" IsIndeterminate="True"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+
     </Grid>
 </Window>
