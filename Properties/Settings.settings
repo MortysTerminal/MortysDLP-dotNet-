@@ -14,7 +14,13 @@
     <Setting Name="ERSTESEKUNDEN_SEKUNDEN" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="VIDEOFORMAT" Type="System.String" Scope="User">
+    <Setting Name="CHECKED_VIDEOFORMAT" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CHECKED_ZEITSPANNE" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CHECKED_ERSTESEKUNDEN" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

@@ -51,7 +51,7 @@
                 <DockPanel Grid.Row="1">
                     <StackPanel Orientation="Horizontal" Margin="7">
                         <ui:TextBlock VerticalAlignment="Center">Video-URL eingeben:</ui:TextBlock>
-                        <ui:TextBox Width="500px" Margin="7" VerticalAlignment="Center" PlaceholderText="https://youtube.com/id=128BF" ></ui:TextBox>
+                        <ui:TextBox Name="tb_URL" Width="500px" Margin="7" VerticalAlignment="Center" PlaceholderText="https://youtube.com/id=128BF" ></ui:TextBox>
                     </StackPanel>
                 </DockPanel>
                 <DockPanel Grid.Row="2">
@@ -80,11 +80,11 @@
                 </DockPanel>
                 <DockPanel Grid.Row="5" Background="AliceBlue">
                     <StackPanel Orientation="Horizontal">
-                        <ui:Button Margin="7">Download starten</ui:Button>
+                        <ui:Button Name="btn_download_starten" Click="DownloadStarten_Click" Margin="7">Download starten</ui:Button>
                         <ui:Button Name="btn_einstellungen_speichern" Click="EinstellungenSpeichern" Margin="7">Einstellungen speichern</ui:Button>
-                        <StackPanel Orientation="Vertical" Margin="7" HorizontalAlignment="Center">
+                        <StackPanel Name="sp_Ladebalken" Visibility= "Hidden" Orientation="Vertical" Margin="7" HorizontalAlignment="Center">
                             <TextBlock>Lädt</TextBlock>
-                            <ProgressBar Width="200" Height="22" IsIndeterminate="True"/>
+                            <ProgressBar  Width="200" Height="22" IsIndeterminate="True"/>
                         </StackPanel>
                     </StackPanel>
                 </DockPanel>

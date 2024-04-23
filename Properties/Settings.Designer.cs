@@ -74,12 +74,36 @@ namespace MortysDLP_dotNet_.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string VIDEOFORMAT {
+        public string CHECKED_VIDEOFORMAT {
             get {
-                return ((string)(this["VIDEOFORMAT"]));
+                return ((string)(this["CHECKED_VIDEOFORMAT"]));
             }
             set {
-                this["VIDEOFORMAT"] = value;
+                this["CHECKED_VIDEOFORMAT"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CHECKED_ZEITSPANNE {
+            get {
+                return ((string)(this["CHECKED_ZEITSPANNE"]));
+            }
+            set {
+                this["CHECKED_ZEITSPANNE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CHECKED_ERSTESEKUNDEN {
+            get {
+                return ((string)(this["CHECKED_ERSTESEKUNDEN"]));
+            }
+            set {
+                this["CHECKED_ERSTESEKUNDEN"] = value;
             }
         }
     }
