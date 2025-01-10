@@ -4,10 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:MortysDLP_dotNet_"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MortysDLP" Height="450" Width="800">
+        Title="MortysDLP"
+        Height="800" 
+        Width="800"
+        MinHeight="800" 
+        MinWidth="800">
     
     <Grid>
         <Grid.RowDefinitions>
@@ -17,10 +22,10 @@
 
         <DockPanel Grid.Row="0">
             <StackPanel Orientation="Horizontal">
-                <ui:Button Name="btn_topBar_Infos" Margin="5">
-                    Info
+                <ui:Button Name="btn_topBar_Infos" Margin="5" Click="OpenGitHub_Click">
+                    Gehe zu MortysTerminal GitHub (Info)
                 </ui:Button>
-                <ui:Button Name="btn_topBar_Einstellungen_Reset" Click="TopBar_EinstellungenReset" FontStyle="Italic" Margin="5">
+                <ui:Button Name="btn_topBar_Einstellungen_Reset" Click="TopBar_EinstellungenReset" FontStyle="Italic" Margin="2">
                     Einstellungen zurücksetzen
                 </ui:Button>
             </StackPanel>
@@ -29,6 +34,7 @@
         <DockPanel Grid.Row="1" Background="#F1F1F1">
             <Grid Margin="7">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -51,7 +57,8 @@
                 <DockPanel Grid.Row="1">
                     <StackPanel Orientation="Horizontal" Margin="7">
                         <ui:TextBlock VerticalAlignment="Center">Video-URL eingeben:</ui:TextBlock>
-                        <ui:TextBox Name="tb_URL" Width="500px" Margin="7" VerticalAlignment="Center" PlaceholderText="https://youtube.com/id=128BF" ></ui:TextBox>
+                        <ui:TextBox Name="tb_URL" Width="500px" Margin="7" VerticalAlignment="Center" PlaceholderText="https://youtube.com/id=128BF" GotFocus="TextBox_GotFocus">
+                        </ui:TextBox>
                     </StackPanel>
                 </DockPanel>
                 <DockPanel Grid.Row="2">
@@ -74,11 +81,33 @@
                 </DockPanel>
                 <DockPanel Grid.Row="4">
                     <StackPanel Orientation="Horizontal" Margin="7">
-                        <CheckBox Name="cb_Videoformat" IsChecked="True" Margin="7"></CheckBox>
-                        <ui:TextBlock Name="txt_Videoformat_info" VerticalAlignment="Center" Margin="7">Videoformat für Schnittprogramme anpassen</ui:TextBlock>
+                        <CheckBox Name="cb_Videoformat" Checked="cbVideoFormatCheck" Unchecked="cbVideoFormatCheck" Margin="7"></CheckBox>
+                        <ui:TextBlock Name="txt_Videoformat_info" VerticalAlignment="Center" Margin="7">Videoformat für Schnittprogramme anpassen (x264)</ui:TextBlock>
+                        <ui:TextBlock Name="txt_Videoformat_info2" VerticalAlignment="Center" Margin="7" Foreground="Silver">(Nicht zusammen mit "NUR Audio")</ui:TextBlock>
                     </StackPanel>
                 </DockPanel>
-                <DockPanel Grid.Row="5" Background="AliceBlue">
+                <DockPanel Grid.Row="5">
+                    <StackPanel Orientation="Horizontal" Margin="7">
+                        <CheckBox Name="cb_AudioOnly" IsChecked="False" Checked="cbAudioOnlyCheck" Unchecked="cbAudioOnlyCheck" Margin="7"></CheckBox>
+                        <ui:TextBlock Name="txt_AudioOnly_info" VerticalAlignment="Center" Margin="7">NUR Audio herunterladen (Default: mp3)</ui:TextBlock>
+
+                        <ComboBox x:Name="AudioFormatComboBox"
+                            Width="150"
+                            Margin="5"
+                            SelectedIndex="4">    
+                            <ComboBoxItem Content="aac" />
+                            <ComboBoxItem Content="alac" />
+                            <ComboBoxItem Content="flac" />
+                            <ComboBoxItem Content="m4a" />
+                            <ComboBoxItem Content="mp3" />
+                            <ComboBoxItem Content="opus" />
+                            <ComboBoxItem Content="vorbis" />
+                            <ComboBoxItem Content="wav" />
+                        </ComboBox>
+                        <ui:TextBlock Name="txt_AudioOnly_info2" VerticalAlignment="Center" Margin="7" Foreground="Silver">(Nicht zusammen mit Videoformat!)</ui:TextBlock>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel Grid.Row="6" Background="AliceBlue">
                     <StackPanel Orientation="Horizontal">
                         <ui:Button Name="btn_download_starten" Click="DownloadStarten_Click" Margin="7">Download starten</ui:Button>
                         <ui:Button Name="btn_einstellungen_speichern" Click="EinstellungenSpeichern" Margin="7">Einstellungen speichern</ui:Button>
@@ -87,6 +116,15 @@
                             <ProgressBar  Width="200" Height="22" IsIndeterminate="True"/>
                         </StackPanel>
                     </StackPanel>
+                </DockPanel>
+                <DockPanel Grid.Row="7" Background="LightGreen">
+                    <TextBox x:Name="OutputTextBox"
+                         VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
+                         IsReadOnly="True"
+                         TextWrapping="NoWrap"
+                         Margin="10"
+                         FontFamily="Consolas" FontSize="12"
+                         AcceptsReturn="True" AcceptsTab="True" />
                 </DockPanel>
             </Grid>
         </DockPanel>

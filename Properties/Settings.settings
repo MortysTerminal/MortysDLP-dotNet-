@@ -23,5 +23,32 @@
     <Setting Name="CHECKED_ERSTESEKUNDEN" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="YT_DLP_RELEASE_URL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://github.com/yt-dlp/yt-dlp/releases/latest</Value>
+    </Setting>
+    <Setting Name="FFMPEG_RELEASE_URL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://github.com/GyanD/codexffmpeg/releases/latest</Value>
+    </Setting>
+    <Setting Name="FFMPEG_JSON_PATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Ressources/ffmpeg/ffmpeg.json</Value>
+    </Setting>
+    <Setting Name="FFMPEG_PATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Ressources/yt-dlp/ffmpeg.exe</Value>
+    </Setting>
+    <Setting Name="FFPROBE_PATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Ressources/yt-dlp/ffprobe.exe</Value>
+    </Setting>
+    <Setting Name="TEMP_FFMPEG_DOWNLOAD_PATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Ressources/ffmpeg/ffmpeg_download.zip</Value>
+    </Setting>
+    <Setting Name="YT_DLP_PATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Ressources/yt-dlp/yt-dlp.exe</Value>
+    </Setting>
+    <Setting Name="CHECKED_AUDIO_ONLY" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SELECTED_AUDIO_FORMAT" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
