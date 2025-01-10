@@ -117,7 +117,7 @@
                         </StackPanel>
                     </StackPanel>
                 </DockPanel>
-                <DockPanel Grid.Row="7" Background="LightGreen">
+                <DockPanel Grid.Row="7" Background="Orange">
                     <TextBox x:Name="OutputTextBox"
                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
                          IsReadOnly="True"
