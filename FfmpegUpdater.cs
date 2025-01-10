@@ -12,8 +12,6 @@ using MortysDLP_dotNet_.Properties;
 
 public class FfmpegUpdater
 {
-
-    //private const string FfmpegReleasesUrl = "https://github.com/GyanD/codexffmpeg/releases/latest";
     private static readonly string FfmpegReleasesUrl   = Settings.Default.FFMPEG_RELEASE_URL;
     private static readonly string FfmpegJsonPath      = Settings.Default.FFMPEG_JSON_PATH;
     private static readonly string FfmpegPath          = Settings.Default.FFMPEG_PATH;

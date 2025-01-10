@@ -11,6 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="docs\**" />
+    <Compile Remove="Tools\**" />
+    <EmbeddedResource Remove="docs\**" />
+    <EmbeddedResource Remove="Tools\**" />
+    <None Remove="docs\**" />
+    <None Remove="Tools\**" />
+    <Page Remove="docs\**" />
+    <Page Remove="Tools\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Ressources\yt-dlp\ffmpeg.exe" />
     <None Remove="Ressources\yt-dlp\ffprobe.exe" />
     <None Remove="Ressources\yt-dlp\yt-dlp.exe" />
@@ -18,11 +29,6 @@
 
   <ItemGroup>
     <Content Include="Logos\Icons\mw_globe_32px.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Release\" />
-    <Folder Include="Tools\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -69,6 +75,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Published\" />
   </ItemGroup>
 
 </Project>
