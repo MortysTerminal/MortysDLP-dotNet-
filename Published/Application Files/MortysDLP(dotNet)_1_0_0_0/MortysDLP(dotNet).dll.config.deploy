@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="MortysDLP_dotNet_.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="MortysDLP_dotNet_.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <applicationSettings>
+        <MortysDLP_dotNet_.Properties.Settings>
+            <setting name="YT_DLP_RELEASE_URL" serializeAs="String">
+                <value>https://github.com/yt-dlp/yt-dlp/releases/latest</value>
+            </setting>
+            <setting name="FFMPEG_RELEASE_URL" serializeAs="String">
+                <value>https://github.com/GyanD/codexffmpeg/releases/latest</value>
+            </setting>
+            <setting name="FFMPEG_JSON_PATH" serializeAs="String">
+                <value>Ressources/ffmpeg/ffmpeg.json</value>
+            </setting>
+            <setting name="FFMPEG_PATH" serializeAs="String">
+                <value>Ressources/yt-dlp/ffmpeg.exe</value>
+            </setting>
+            <setting name="FFPROBE_PATH" serializeAs="String">
+                <value>Ressources/yt-dlp/ffprobe.exe</value>
+            </setting>
+            <setting name="TEMP_FFMPEG_DOWNLOAD_PATH" serializeAs="String">
+                <value>Ressources/ffmpeg/ffmpeg_download.zip</value>
+            </setting>
+            <setting name="YT_DLP_PATH" serializeAs="String">
+                <value>Ressources/yt-dlp/yt-dlp.exe</value>
+            </setting>
+        </MortysDLP_dotNet_.Properties.Settings>
+    </applicationSettings>
+    <userSettings>
+        <MortysDLP_dotNet_.Properties.Settings>
+            <setting name="DOWNLOADPATH" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ZEITSPANNE_VON" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ZEITSPANNE_BIS" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ERSTESEKUNDEN_SEKUNDEN" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="CHECKED_VIDEOFORMAT" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="CHECKED_ZEITSPANNE" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="CHECKED_ERSTESEKUNDEN" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="CHECKED_AUDIO_ONLY" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="SELECTED_AUDIO_FORMAT" serializeAs="String">
+                <value />
+            </setting>
+        </MortysDLP_dotNet_.Properties.Settings>
+    </userSettings>
+</configuration>
